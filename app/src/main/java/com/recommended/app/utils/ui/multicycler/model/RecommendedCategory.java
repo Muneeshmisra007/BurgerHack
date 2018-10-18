@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler.model;
+package com.recommended.app.utils.ui.multicycler.model;
 
 import com.burgerhack.multicycler.OnMultiCyclerItemClickListener;
 import com.burgerhack.multicycler.adapters.CellAdapter;
@@ -9,7 +9,7 @@ import com.burgerhack.multicycler.modelservices.DataList;
 
 import java.util.ArrayList;
 
-public class RecommendedCategories implements RowBehaviour {
+public class RecommendedCategory implements RowBehaviour {
     public String category;
     public String title;
     public boolean isSeeAll;
@@ -22,42 +22,6 @@ public class RecommendedCategories implements RowBehaviour {
     }
 
     private transient CellAdapter recylerCellAdapter;
-
-    /*public class RecommendedItem implements CellBehaviour {
-        @SerializedName("id")
-        public String id;
-        @SerializedName("imageUrl")
-        public String imageUrl;
-        @SerializedName("title")
-        public String title;
-
-        public RecommendedItem(String id, String imageUrl, String title, boolean energyInfo) {
-            this.id = id;
-            this.imageUrl = imageUrl;
-            this.title = title;
-            this.energyInfo = energyInfo;
-        }
-
-        @SerializedName("energyInfo")
-
-        public boolean energyInfo;
-
-        public String getId() {
-            return id;
-        }
-
-        public String getImageUrl() {
-            return imageUrl;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public boolean isEnergyInfo() {
-            return energyInfo;
-        }
-    }*/
 
     public String getCategory() {
         return category;
@@ -99,5 +63,29 @@ public class RecommendedCategories implements RowBehaviour {
             cellBehaviours.add(item);
         }
         return cellBehaviours;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setSeeAll(boolean seeAll) {
+        isSeeAll = seeAll;
+    }
+
+    public void setLayoutId(int layoutId) {
+        this.layoutId = layoutId;
+    }
+
+    public CellAdapter getRecylerCellAdapter() {
+        return recylerCellAdapter;
+    }
+
+    public void setRecylerCellAdapter(CellAdapter recylerCellAdapter) {
+        this.recylerCellAdapter = recylerCellAdapter;
     }
 }

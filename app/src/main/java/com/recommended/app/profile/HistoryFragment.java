@@ -9,7 +9,11 @@ import android.view.View;
 import com.burgerhack.core.ui.BaseFragment;
 
 import com.recommended.app.R;
+import com.recommended.app.model.BHRecommendedGenerator;
 import com.recommended.app.utils.ui.RecommendedGridAdapter;
+import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
+
+import java.util.ArrayList;
 
 
 /**
@@ -19,6 +23,7 @@ import com.recommended.app.utils.ui.RecommendedGridAdapter;
 public class HistoryFragment extends BaseFragment {
 
     RecyclerView mRvHistory;
+    RecommendedGridAdapter mHistoryAdapter;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -27,9 +32,12 @@ public class HistoryFragment extends BaseFragment {
         mRvHistory = view.findViewById(R.id.rvHistory);
         mRvHistory.setLayoutManager(new GridLayoutManager(getContext(), 3));
         mRvHistory.setHasFixedSize(false);
-        //mRvHistory.setAdapter(new RecommendedGridAdapter(new ArrayList<ParkingItem>()));
+        mHistoryAdapter = new RecommendedGridAdapter(new ArrayList());
+        mRvHistory.setAdapter(mHistoryAdapter);
         mRvHistory.setNestedScrollingEnabled(false);
-        //fetch data and set in Recyler
+        ArrayList<RecommendedItem> recommendedItems = (ArrayList<RecommendedItem>)
+                BHRecommendedGenerator.getInstance().getRecentsList();
+        mHistoryAdapter.updateAdapter(recommendedItems);
     }
 
     @Override

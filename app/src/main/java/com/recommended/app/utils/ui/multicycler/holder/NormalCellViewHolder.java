@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler.holder;
+package com.recommended.app.utils.ui.multicycler.holder;
 
 import android.view.View;
 

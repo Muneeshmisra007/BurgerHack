@@ -7,9 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.burgerhack.core.ui.BaseFragment;
-
 import com.recommended.app.R;
+import com.recommended.app.model.BHRecommendedGenerator;
 import com.recommended.app.utils.ui.RecommendedGridAdapter;
+import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
+
+import java.util.ArrayList;
 
 
 /**
@@ -19,6 +22,7 @@ import com.recommended.app.utils.ui.RecommendedGridAdapter;
 public class FavoritesFragment extends BaseFragment {
 
     RecyclerView mRvFavorite;
+    RecommendedGridAdapter mFavoriteAdapter;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -27,9 +31,12 @@ public class FavoritesFragment extends BaseFragment {
         mRvFavorite = view.findViewById(R.id.rvFavorite);
         mRvFavorite.setLayoutManager(new GridLayoutManager(getContext(), 3));
         mRvFavorite.setHasFixedSize(false);
-        //mRvFavorite.setAdapter(new RecommendedGridAdapter(new ArrayList<ParkingItem>()));
+        mFavoriteAdapter = new RecommendedGridAdapter(new ArrayList());
+        mRvFavorite.setAdapter(mFavoriteAdapter);
         mRvFavorite.setNestedScrollingEnabled(false);
-        //fetch data and set in Recyler
+        ArrayList<RecommendedItem> recommendedItems = (ArrayList<RecommendedItem>)
+                BHRecommendedGenerator.getInstance().getRecentsList();
+        mFavoriteAdapter.updateAdapter(recommendedItems);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler.model;
+package com.recommended.app.utils.ui.multicycler.model;
 
 import com.burgerhack.multicycler.model.RowBehaviour;
 import java.util.ArrayList;
@@ -14,12 +14,12 @@ public class RecommendedResponse {
 
         int errorStatus;
 
-        public void setCategories(ArrayList<RecommendedCategories> categories) {
+        public void setCategories(ArrayList<RecommendedCategory> categories) {
             this.categories = categories;
         }
 
 
-        ArrayList<RecommendedCategories> categories;
+        ArrayList<RecommendedCategory> categories;
 
         public int getErrorCode() {
             return errorCode;
@@ -29,13 +29,13 @@ public class RecommendedResponse {
             return errorStatus;
         }
 
-        public ArrayList<RecommendedCategories>  getCategories() {
+        public ArrayList<RecommendedCategory>  getCategories() {
             return categories;
         }
 
         public ArrayList<RowBehaviour> getCategoriesRows() {
             ArrayList<RowBehaviour> rows = new ArrayList<>();
-            for (RecommendedCategories category : categories) {
+            for (RecommendedCategory category : categories) {
                 rows.add(category);
             }
             return rows;

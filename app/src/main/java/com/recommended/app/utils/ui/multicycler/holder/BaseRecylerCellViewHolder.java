@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler.holder;
+package com.recommended.app.utils.ui.multicycler.holder;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide;
 import com.burgerhack.multicycler.OnMultiCyclerItemClickListener;
 import com.burgerhack.multicycler.model.CellBehaviour;
 import com.burgerhack.multicycler.viewholder.CellViewHolder;
-import com.recommended.app.home.ui.multicycler.model.RecommendedItem;
+import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import com.recommended.app.R;
 

@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler;
+package com.recommended.app.utils.ui.multicycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +8,9 @@ import com.burgerhack.multicycler.factory.MultiRecyclerViewFactory;
 import com.burgerhack.multicycler.viewholder.CellViewHolder;
 import com.burgerhack.multicycler.viewholder.RowViewHolder;
 import com.recommended.app.R;
-import com.recommended.app.home.ui.multicycler.holder.BannerRowViewHolder;
-import com.recommended.app.home.ui.multicycler.holder.NormalCellViewHolder;
-import com.recommended.app.home.ui.multicycler.holder.NormalRowViewHolder;
+import com.recommended.app.utils.ui.multicycler.holder.BannerRowViewHolder;
+import com.recommended.app.utils.ui.multicycler.holder.NormalCellViewHolder;
+import com.recommended.app.utils.ui.multicycler.holder.NormalRowViewHolder;
 
 /**
  * Created by Amritpal Singh on 19/10/18.

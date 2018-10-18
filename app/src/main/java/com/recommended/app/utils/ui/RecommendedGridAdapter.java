@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.recommended.app.R;
+import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import java.util.ArrayList;
 
@@ -17,17 +18,16 @@ import java.util.ArrayList;
  */
 public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGridAdapter.GridViewHolder> {
 
-    private ArrayList gridItems;
+    private ArrayList<RecommendedItem> gridItems;
 
-    public RecommendedGridAdapter(ArrayList parkingItems) {
-        gridItems = parkingItems;
+    public RecommendedGridAdapter(ArrayList recommendedItems) {
+        gridItems = recommendedItems;
     }
 
-    public void updateAdapter(ArrayList parkingItems) {
-
+    public void updateAdapter(ArrayList recommendedItems) {
         if (gridItems != null) {
             gridItems.clear();
-            gridItems.addAll(parkingItems);
+            gridItems.addAll(recommendedItems);
             notifyDataSetChanged();
         }
     }
@@ -41,7 +41,7 @@ public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGrid
 
     @Override
     public void onBindViewHolder(GridViewHolder holder, int position) {
-        holder.setData(/*gridItems.get(position)*/);
+        holder.setData(gridItems.get(position));
     }
 
     @Override
@@ -61,10 +61,10 @@ public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGrid
         }
 
 
-        public void setData(/*T Item*/) {
-            //tvTitle.setText(parkingItem.getParkingName());
+        public void setData(RecommendedItem item) {
+            mTvTitle.setText(item.getTitle());
             mImage.setImageDrawable(null);
-            Glide.with(itemView.getContext()).load("url here").
+            Glide.with(itemView.getContext()).load(item.getImageUrl()).
                     placeholder(R.drawable.default_placeholder).into(mImage);
         }
 

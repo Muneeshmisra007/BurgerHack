@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler.holder;
+package com.recommended.app.utils.ui.multicycler.holder;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import com.burgerhack.multicycler.OnMultiCyclerItemClickListener;
 import com.burgerhack.multicycler.factory.MultiRecyclerViewFactory;
 import com.burgerhack.multicycler.model.RowBehaviour;
 import com.recommended.app.R;
-import com.recommended.app.home.ui.multicycler.model.RecommendedCategories;
+import com.recommended.app.utils.ui.multicycler.model.RecommendedCategory;
 
 /**
  * Created by Amritpal Singh on 19/10/18.
@@ -27,7 +27,7 @@ public class NormalRowViewHolder extends BaseRecylerRowViewHolder {
 
     @Override
     public void bind(RowBehaviour row, MultiRecyclerViewFactory factory, OnMultiCyclerItemClickListener listener) {
-        RecommendedCategories category = (RecommendedCategories) row;
+        RecommendedCategory category = (RecommendedCategory) row;
         TextView tvRowTitle = (TextView) itemView.findViewById(R.id.tvRowTitle);
         TextView tvSeeMore = (TextView) itemView.findViewById(R.id.tvSeeMore);
 

@@ -1,4 +1,4 @@
-package com.recommended.app.home.ui.multicycler.model;
+package com.recommended.app.utils.ui.multicycler.model;
 
 import com.burgerhack.multicycler.model.CellBehaviour;
 
@@ -10,15 +10,14 @@ public class RecommendedItem implements CellBehaviour {
     public String id;
     public String imageUrl;
     public String title;
+    public int energyInfo;
 
-    public RecommendedItem(String id, String imageUrl, String title, boolean energyInfo) {
+    public RecommendedItem(String id, String imageUrl, String title, int energyInfo) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.title = title;
         this.energyInfo = energyInfo;
     }
-
-    public boolean energyInfo;
 
     public String getId() {
         return id;
@@ -32,7 +31,7 @@ public class RecommendedItem implements CellBehaviour {
         return title;
     }
 
-    public boolean isEnergyInfo() {
+    public int getEnergyInfo() {
         return energyInfo;
     }
 }
