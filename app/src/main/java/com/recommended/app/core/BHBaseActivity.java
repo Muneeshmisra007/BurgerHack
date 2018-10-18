@@ -13,13 +13,14 @@ import com.burgerhack.core.ui.BaseActivity;
 import com.burgerhack.core.ui.BaseFragment;
 import com.burgerhack.core.ui.FragmentLauncher;
 import com.recommended.app.R;
+import com.recommended.app.network.FireBaseDataProviderImpl;
 
 
 /**
  * Created by Amritpal Singh on 19/10/18.
  */
 
-public abstract class BHBaseActivity extends BaseActivity {
+public abstract class BHBaseActivity extends BaseActivity implements FireBaseDataProvider {
 
     ViewGroup mMainToolBar;
     View mSearchIcon;
@@ -83,6 +84,7 @@ public abstract class BHBaseActivity extends BaseActivity {
                 setAddToBackStack(isAddToBackStack).build();
         launchFragment(fragmentLauncher);
     }
+
 
 }
 
