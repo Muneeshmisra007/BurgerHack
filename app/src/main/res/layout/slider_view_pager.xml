@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <com.recommended.app.utils.ui.PagerContainer
+        android:id="@+id/pagerContainer"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpSliderPager"
+            android:layout_width="@dimen/sliderWidth"
+            android:layout_height="@dimen/sliderHeight"
+            android:layout_gravity="center_horizontal"/>
+
+    </com.recommended.app.utils.ui.PagerContainer>
+
+    <LinearLayout
+        android:id="@+id/containerSliderIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginTop="@dimen/globalDimenMid"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal"/>
+
+    <include
+        android:id="@+id/dividerLine"
+        layout="@layout/custom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dividerHeight"
+        android:layout_below="@+id/rvVideoRecycler"
+        android:layout_marginTop="@dimen/globalDimenMid"/>
+
+</LinearLayout>
+
+

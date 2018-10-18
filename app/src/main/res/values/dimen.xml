@@ -47,4 +47,12 @@
     <dimen name="addCardElevation">4dp</dimen>
     <dimen name="defaultCardElevation">4dp</dimen>
 
+    <dimen name="sliderSubtitleMarginBottom">18dp</dimen>
+    <dimen name="sliderWidth">320dp</dimen>
+    <dimen name="sliderHeight">202dp</dimen>
+
+
+    <dimen name="sliderTitleTextSize">27dp</dimen>
+    <dimen name="sliderSubTitleTextSize">14dp</dimen>
+
 </resources>
