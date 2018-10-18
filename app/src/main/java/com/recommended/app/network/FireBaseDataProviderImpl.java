@@ -9,6 +9,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.recommended.app.core.FireBaseDataProvider;
@@ -25,17 +26,18 @@ public class FireBaseDataProviderImpl implements FireBaseDataProvider {
     }
 
     @Override
-    public void getAllProducts(final AysncListener listener) {
+    public void getAllProducts(final AsyncListener listener) {
         Query myTopPostsQuery = getDB().child("Products");
         myTopPostsQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                List<Product> list;
+                List<Product> list =new ArrayList<>();
                 for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
                     Log.d("data===", noteDataSnapshot.getValue(Product.class).toString());
-                    list = (List<Product>) noteDataSnapshot.getValue(Product.class);
-                    listener.onResponse(list == null ? new Exception() : null, list);
+                    list .add(noteDataSnapshot.getValue(Product.class));
+
                 }
+                listener.onResponse(list == null ? new Exception() : null, list);
             }
 
             @Override

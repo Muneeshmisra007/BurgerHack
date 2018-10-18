@@ -10,6 +10,7 @@ import com.burgerhack.multicycler.model.CellBehaviour;
 import com.burgerhack.core.ui.BaseFragment;
 import com.burgerhack.multicycler.model.RowBehaviour;
 import com.recommended.app.model.BHRecommendedGenerator;
+import com.recommended.app.network.AsyncListener;
 import com.recommended.app.utils.ui.multicycler.BHMulticylerFactory;
 
 import com.recommended.app.R;
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by Amritpal Singh on 19/10/18.
  */
 
-public class HomeFragment extends BaseFragment implements OnMultiCyclerItemClickListener {
+public class HomeFragment extends BaseFragment implements OnMultiCyclerItemClickListener,AsyncListener<List<RowBehaviour>> {
 
     private MultiRecycler mMultiRecycler;
 
@@ -48,9 +49,7 @@ public class HomeFragment extends BaseFragment implements OnMultiCyclerItemClick
 
     private void executeWebService() {
         showStatus(STATUS.STATUS_LOADING);
-        List<RowBehaviour> recommendedCategories =
-                BHRecommendedGenerator.getInstance().getHomeScreenContent();
-        mMultiRecycler.addData(recommendedCategories);
+        BHRecommendedGenerator.getInstance().getHomeScreenContent(this);
     }
 
     @Override
@@ -61,5 +60,10 @@ public class HomeFragment extends BaseFragment implements OnMultiCyclerItemClick
     @Override
     public void onMultiCyclerItemClick(View view, CellBehaviour cellItem) {
 
+    }
+
+    @Override
+    public void onResponse(Exception exception, List<RowBehaviour> response) {
+        mMultiRecycler.addData(response);
     }
 }

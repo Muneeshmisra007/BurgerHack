@@ -12,19 +12,20 @@ import com.recommended.app.R;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Amritpal Singh on 7/8/16.
  */
 public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGridAdapter.GridViewHolder> {
 
-    private ArrayList<RecommendedItem> gridItems;
+    private List<RecommendedItem> gridItems;
 
-    public RecommendedGridAdapter(ArrayList recommendedItems) {
+    public RecommendedGridAdapter(List<RecommendedItem> recommendedItems) {
         gridItems = recommendedItems;
     }
 
-    public void updateAdapter(ArrayList recommendedItems) {
+    public void updateAdapter(List<RecommendedItem> recommendedItems) {
         if (gridItems != null) {
             gridItems.clear();
             gridItems.addAll(recommendedItems);
@@ -74,7 +75,7 @@ public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGrid
             }
         }
 
-        public ArrayList getItemsList() {
+        public List<RecommendedItem> getItemsList() {
             return gridItems;
         }
     }

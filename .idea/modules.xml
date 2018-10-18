@@ -6,10 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Hackathon.iml" filepath="$PROJECT_DIR$/Hackathon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/core/core.iml" filepath="$PROJECT_DIR$/libraries/core/core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/core/core.iml" filepath="$PROJECT_DIR$/libraries/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries_.iml" filepath="$PROJECT_DIR$/libraries/libraries_.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/libraries_.iml" filepath="$PROJECT_DIR$/libraries/libraries_.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/multicycler/multicycler.iml" filepath="$PROJECT_DIR$/libraries/multicycler/multicycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/multicycler/multicycler.iml" filepath="$PROJECT_DIR$/libraries/multicycler/multicycler.iml" />
     </modules>
   </component>

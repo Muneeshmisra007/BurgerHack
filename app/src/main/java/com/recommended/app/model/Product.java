@@ -1,7 +1,6 @@
 package com.recommended.app.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Muneesh on 18/10/18.
@@ -16,7 +15,7 @@ public class Product {
     private String productName;
     private boolean isTrending;
     private boolean isFavourite;
-    private boolean isRecommended;
+    private boolean isRecent;
     private int viewCount;
     private ArrayList<Integer> dayParts;
     private int calories;
@@ -75,7 +74,7 @@ public class Product {
         this.productName = productName;
     }
 
-    public boolean isTrending() {
+    public boolean isIsTrending() {
         return isTrending;
     }
 
@@ -83,7 +82,7 @@ public class Product {
         isTrending = trending;
     }
 
-    public boolean isFavourite() {
+    public boolean isIsFavourite() {
         return isFavourite;
     }
 
@@ -91,12 +90,12 @@ public class Product {
         isFavourite = favourite;
     }
 
-    public boolean isRecommended() {
-        return isRecommended;
+    public boolean isIsRecent() {
+        return isRecent;
     }
 
-    public void setRecommended(boolean recommended) {
-        isRecommended = recommended;
+    public void setRecent(boolean recommended) {
+        isRecent = recommended;
     }
 
     public int getViewCount() {
@@ -133,7 +132,7 @@ public class Product {
                 "\n" + productName +
                 "\n" + isTrending +
                 "\n" + isFavourite +
-                "\n" + isRecommended +
+                "\n" + isRecent +
                 "\n" + viewCount +
                 "\n" + dayParts.toString() +
                 "\n" + calories +

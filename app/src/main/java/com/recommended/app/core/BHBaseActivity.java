@@ -20,7 +20,7 @@ import com.recommended.app.network.FireBaseDataProviderImpl;
  * Created by Amritpal Singh on 19/10/18.
  */
 
-public abstract class BHBaseActivity extends BaseActivity implements FireBaseDataProvider {
+public abstract class BHBaseActivity extends BaseActivity {
 
     ViewGroup mMainToolBar;
     View mSearchIcon;

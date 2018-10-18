@@ -1,4 +1,4 @@
-package com.recommended.app.profile;
+package com.recommended.app.history;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,17 +10,19 @@ import com.burgerhack.core.ui.BaseFragment;
 
 import com.recommended.app.R;
 import com.recommended.app.model.BHRecommendedGenerator;
+import com.recommended.app.network.AsyncListener;
 import com.recommended.app.utils.ui.RecommendedGridAdapter;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * Created by Amritpal Singh on 5/27/17.
  */
 
-public class HistoryFragment extends BaseFragment {
+public class HistoryFragment extends BaseFragment implements AsyncListener<List<RecommendedItem>>{
 
     RecyclerView mRvHistory;
     RecommendedGridAdapter mHistoryAdapter;
@@ -35,9 +37,8 @@ public class HistoryFragment extends BaseFragment {
         mHistoryAdapter = new RecommendedGridAdapter(new ArrayList());
         mRvHistory.setAdapter(mHistoryAdapter);
         mRvHistory.setNestedScrollingEnabled(false);
-        ArrayList<RecommendedItem> recommendedItems = (ArrayList<RecommendedItem>)
-                BHRecommendedGenerator.getInstance().getRecentsList();
-        mHistoryAdapter.updateAdapter(recommendedItems);
+        BHRecommendedGenerator.getInstance().getBrowseHistory(this);
+
     }
 
     @Override
@@ -55,5 +56,8 @@ public class HistoryFragment extends BaseFragment {
 
     }
 
-
+    @Override
+    public void onResponse(Exception exception, List<RecommendedItem> response) {
+        mHistoryAdapter.updateAdapter(response);
+    }
 }

@@ -1,9 +1,6 @@
 package com.recommended.app.core;
 
-import java.util.List;
-
-import com.recommended.app.model.Product;
-import com.recommended.app.network.AysncListener;
+import com.recommended.app.network.AsyncListener;
 
 /**
  * Created by Muneesh on 18/10/18.
@@ -11,7 +8,7 @@ import com.recommended.app.network.AysncListener;
 
 public interface FireBaseDataProvider {
 
-    void getAllProducts(AysncListener listener);
+    void getAllProducts(AsyncListener listener);
 /*
     void getRecentProducts();
 

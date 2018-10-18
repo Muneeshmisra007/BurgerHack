@@ -26,15 +26,15 @@ public abstract class BaseRecylerCellViewHolder extends CellViewHolder implement
     @Override
     public void bind(CellBehaviour cell, int position, OnMultiCyclerItemClickListener listener) {
         this.listener = listener;
-        RecommendedItem stream = (RecommendedItem) cell;
-        item = stream;
-        ImageView imageView = (ImageView) itemView.findViewById(R.id.imgCell);
+        RecommendedItem recommendedItem = (RecommendedItem) cell;
+        item = recommendedItem;
+        ImageView imageView = itemView.findViewById(R.id.imgCell);
 
-        TextView tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
-        tvTitle.setText(stream.getTitle());
+        TextView tvTitle = itemView.findViewById(R.id.tvTitle);
+        tvTitle.setText(recommendedItem.getTitle());
 
         imageView.setImageDrawable(null);
-        Glide.with(itemView.getContext()).load(stream.getImageUrl()).
+        Glide.with(itemView.getContext()).load(recommendedItem.getImageUrl()).
                 placeholder(R.drawable.default_placeholder).into(imageView);
         imageView.setOnClickListener(this);
     }

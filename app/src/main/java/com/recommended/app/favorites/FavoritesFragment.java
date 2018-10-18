@@ -9,17 +9,19 @@ import android.view.View;
 import com.burgerhack.core.ui.BaseFragment;
 import com.recommended.app.R;
 import com.recommended.app.model.BHRecommendedGenerator;
+import com.recommended.app.network.AsyncListener;
 import com.recommended.app.utils.ui.RecommendedGridAdapter;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * Created by Amritpal Singh on 19/10/18.
  */
 
-public class FavoritesFragment extends BaseFragment {
+public class FavoritesFragment extends BaseFragment implements AsyncListener<List<RecommendedItem>> {
 
     RecyclerView mRvFavorite;
     RecommendedGridAdapter mFavoriteAdapter;
@@ -34,9 +36,7 @@ public class FavoritesFragment extends BaseFragment {
         mFavoriteAdapter = new RecommendedGridAdapter(new ArrayList());
         mRvFavorite.setAdapter(mFavoriteAdapter);
         mRvFavorite.setNestedScrollingEnabled(false);
-        ArrayList<RecommendedItem> recommendedItems = (ArrayList<RecommendedItem>)
-                BHRecommendedGenerator.getInstance().getRecentsList();
-        mFavoriteAdapter.updateAdapter(recommendedItems);
+        BHRecommendedGenerator.getInstance().getFavoritesList(this);
     }
 
     @Override
@@ -53,5 +53,10 @@ public class FavoritesFragment extends BaseFragment {
     @Override
     protected void refreshActiveFragment() {
 
+    }
+
+    @Override
+    public void onResponse(Exception exception, List<RecommendedItem> response) {
+        mFavoriteAdapter.updateAdapter(response);
     }
 }

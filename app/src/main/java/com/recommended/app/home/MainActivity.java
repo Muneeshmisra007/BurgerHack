@@ -6,7 +6,7 @@ import com.recommended.app.core.BHBaseActivity;
 import com.recommended.app.recents.RecentsFragment;
 import com.recommended.app.favorites.FavoritesFragment;
 import com.recommended.app.home.fragments.HomeFragment;
-import com.recommended.app.profile.HistoryFragment;
+import com.recommended.app.history.HistoryFragment;
 import com.recommended.app.utils.ui.BHTabHost;
 
 import com.recommended.app.R;
@@ -31,7 +31,7 @@ public class MainActivity extends BHBaseActivity implements BHTabHost.OnTabClick
     }
 
     private void initViews() {
-        mTabHost = (BHTabHost) findViewById(R.id.tabHostBottom);
+        mTabHost = findViewById(R.id.tabHostBottom);
         mTabHost.setOnTabClickListener(this);
         setHeaderText(getResources().getString(R.string.app_name));
         toggleSearchVisibility(true);
@@ -41,22 +41,22 @@ public class MainActivity extends BHBaseActivity implements BHTabHost.OnTabClick
         switch (tab) {
             case HOME:
                 if (!isFragmentAlreadyLoaded(getMainContainerId(), HomeFragment.class)) {
-                    launchFragmentInMainContainer(new HomeFragment(), getMainContainerId(), true, false);
+                    launchFragmentInMainContainer(new HomeFragment(), getMainContainerId(), false, false);
                 }
                 break;
             case FAVORITES:
                 if (!isFragmentAlreadyLoaded(getMainContainerId(), FavoritesFragment.class)) {
-                    launchFragmentInMainContainer(new FavoritesFragment(), getMainContainerId(), true, false);
+                    launchFragmentInMainContainer(new FavoritesFragment(), getMainContainerId(), false, false);
                 }
                 break;
             case DOWNLOADS:
                 if (!isFragmentAlreadyLoaded(getMainContainerId(), RecentsFragment.class)) {
-                    launchFragmentInMainContainer(new RecentsFragment(), getMainContainerId(), true, false);
+                    launchFragmentInMainContainer(new RecentsFragment(), getMainContainerId(), false, false);
                 }
                 break;
             case PROFILE:
                 if (!isFragmentAlreadyLoaded(getMainContainerId(), HistoryFragment.class)) {
-                    launchFragmentInMainContainer(new HistoryFragment(), getMainContainerId(), true, false);
+                    launchFragmentInMainContainer(new HistoryFragment(), getMainContainerId(), false, false);
                 }
             default:
 
