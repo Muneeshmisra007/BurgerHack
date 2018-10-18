@@ -91,31 +91,14 @@
         android:layout_margin="10dp"
         android:background="@android:color/darker_gray" />
 
-    <com.burgerhack.core.ui.customfontview.TextViewYMBold
-        android:id="@+id/tvHeading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider1"
-        android:layout_marginLeft="10dp"
-        android:gravity="left"
-        android:text="Customer also bought:"
 
-        android:textColor="@color/cellTextColor"
-        android:textSize="@dimen/mediumTextSize" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/tvHeading"
-        android:layout_margin="10dp"
-        android:background="@android:color/darker_gray" />
-
-    <android.support.v7.widget.RecyclerView
+    <com.burgerhack.multicycler.MultiRecycler
         android:id="@+id/rvCrossSell"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:layout_below="@+id/divider"
+        android:layout_below="@+id/divider1"
         android:layout_margin="10dp"
-        android:nestedScrollingEnabled="true" />
+        android:nestedScrollingEnabled="true">
+
+    </com.burgerhack.multicycler.MultiRecycler>
 </RelativeLayout>

@@ -2,32 +2,36 @@ package com.recommended.app.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.burgerhack.core.ui.customfontview.TextViewYMBold;
 import com.burgerhack.core.ui.BaseFragment;
+import com.burgerhack.multicycler.MultiRecycler;
+import com.burgerhack.multicycler.OnMultiCyclerItemClickListener;
+import com.burgerhack.multicycler.model.CellBehaviour;
+import com.burgerhack.multicycler.model.RowBehaviour;
 import com.recommended.app.R;
+import com.recommended.app.model.BHRecommendedGenerator;
+import com.recommended.app.network.AsyncListener;
+import com.recommended.app.utils.ui.multicycler.BHMulticylerFactory;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
+import java.util.List;
 
-public class DetailFragment extends BaseFragment {
 
-    RecyclerView mRecommededAdapter;
+public class DetailFragment extends BaseFragment implements OnMultiCyclerItemClickListener,AsyncListener<List<RowBehaviour>> {
+
+    MultiRecycler mMultiRecycler;
     RecommendedItem mRecommendedItem;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        mRecommededAdapter = view.findViewById(R.id.rvCrossSell);
-        mRecommededAdapter.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        mRecommededAdapter.setHasFixedSize(false);
-        //mRvFavorite.setAdapter(new RecommendedGridAdapter(new ArrayList<ParkingItem>()));
-        mRecommededAdapter.setNestedScrollingEnabled(false);
+        mMultiRecycler = view.findViewById(R.id.rvCrossSell);
+        mMultiRecycler.setMultiCyclerData(new BHMulticylerFactory(), this);
+        executeWebService();
         initializeLayout(view);
     }
 
@@ -60,5 +64,20 @@ public class DetailFragment extends BaseFragment {
     @Override
     protected void refreshActiveFragment() {
 
+    }
+
+    @Override
+    public void onMultiCyclerItemClick(View view, CellBehaviour cellItem) {
+
+    }
+
+    @Override
+    public void onResponse(Exception exception, List<RowBehaviour> response) {
+        mMultiRecycler.addData(response);
+    }
+
+    private void executeWebService() {
+        showStatus(STATUS.STATUS_LOADING);
+        BHRecommendedGenerator.getInstance().customerAlsoBought(this);
     }
 }

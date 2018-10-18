@@ -55,6 +55,21 @@ public class BHRecommendedGenerator {
         });
     }
 
+    /**
+     * TODO: Need to change implementation of this method
+     * @param asyncListener
+     */
+    public void customerAlsoBought(final AsyncListener<List<RowBehaviour>> asyncListener) {
+        getAllProducts(new AsyncListener<List<Product>>() {
+            @Override
+            public void onResponse(Exception exception, List<Product> products) {
+                List<RowBehaviour> recommendedCategories = new ArrayList<>();
+                recommendedCategories.add(getAlsoBought());
+                asyncListener.onResponse(exception, recommendedCategories);
+            }
+        });
+    }
+
     public void getRecentsList(final AsyncListener<List<RecommendedItem>> asyncListener) {
         getAllProducts(new AsyncListener<List<Product>>() {
             @Override
@@ -105,6 +120,17 @@ public class BHRecommendedGenerator {
         category.setLayoutId(1);
         category.setSeeAll(false);
         category.setTitle("Trending Macs");
+        List<Product> filteredTrendingProducts = DataHelper.getInstance().getTrendingProducts(mAllProducts);
+        category.setRecommendedItems(getItemsList(filteredTrendingProducts));
+        return category;
+    }
+
+    private RecommendedCategory getAlsoBought() {
+        RecommendedCategory category = new RecommendedCategory();
+        category.setCategory("Customer Also Bought");
+        category.setLayoutId(1);
+        category.setSeeAll(false);
+        category.setTitle("Customer Also Bought");
         List<Product> filteredTrendingProducts = DataHelper.getInstance().getTrendingProducts(mAllProducts);
         category.setRecommendedItems(getItemsList(filteredTrendingProducts));
         return category;
