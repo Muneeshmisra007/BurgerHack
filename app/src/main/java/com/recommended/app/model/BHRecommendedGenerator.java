@@ -55,6 +55,21 @@ public class BHRecommendedGenerator {
         });
     }
 
+    /**
+     * TODO: Need to change implementation of this method
+     * @param asyncListener
+     */
+    public void customerAlsoBought(final AsyncListener<List<RowBehaviour>> asyncListener) {
+        getAllProducts(new AsyncListener<List<Product>>() {
+            @Override
+            public void onResponse(Exception exception, List<Product> products) {
+                List<RowBehaviour> recommendedCategories = new ArrayList<>();
+                recommendedCategories.add(getAlsoBought());
+                asyncListener.onResponse(exception, recommendedCategories);
+            }
+        });
+    }
+
     public void getRecentsList(final AsyncListener<List<RecommendedItem>> asyncListener) {
         getAllProducts(new AsyncListener<List<Product>>() {
             @Override
@@ -110,6 +125,17 @@ public class BHRecommendedGenerator {
         return category;
     }
 
+    private RecommendedCategory getAlsoBought() {
+        RecommendedCategory category = new RecommendedCategory();
+        category.setCategory("Customer Also Bought");
+        category.setLayoutId(1);
+        category.setSeeAll(false);
+        category.setTitle("Customer Also Bought");
+        List<Product> filteredTrendingProducts = DataHelper.getInstance().getTrendingProducts(mAllProducts);
+        category.setRecommendedItems(getItemsList(filteredTrendingProducts));
+        return category;
+    }
+
     private RecommendedCategory getYouMayLikeContent() {
         RecommendedCategory category = new RecommendedCategory();
         category.setCategory("ymal");
@@ -127,7 +153,9 @@ public class BHRecommendedGenerator {
             RecommendedItem recommendedItem = new RecommendedItem(recommendedProduct.getProductId(),
                     recommendedProduct.getImageUrl(),
                     recommendedProduct.getProductName(),
-                    recommendedProduct.getCalories());
+                    recommendedProduct.getCalories(),
+                    recommendedProduct.getRating()
+                    );
             recommendedItems.add(recommendedItem);
         }
         return recommendedItems;
