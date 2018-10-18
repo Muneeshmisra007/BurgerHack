@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">BurgerHackthon</string>
+
+    <!-- Recycler Row Text-->
+    <string name="dummyRowTitle">Row Title</string>
+    <string name="seeMore">More ></string>
+
+    <!--   Icon Fonts characters-->
+    <string name="iconHome">s</string>
+    <string name="iconCheck">a</string>
+    <string name="iconAdd">d</string>
+    <string name="iconArrowBack">f</string>
+    <string name="iconFlag">h</string>
+    <string name="iconCamera">j</string>
+    <string name="iconClose">k</string>
+    <string name="iconEdit">o</string>
+    <string name="iconMenu">n</string>
+    <string name="iconFavorite">t</string>
+    <string name="iconVoice">z</string>
+    <string name="iconShare">(</string>
+    <string name="iconSearch">)</string>
+    <string name="iconCheckCirle">e</string>
+    <string name="iconDownload">b</string>
+    <string name="iconDelete">c</string>
+    <string name="iconStar">w</string>
+    <string name="iconSync">p</string>
+    <string name="iconSideMenu">]</string>
+    <string name="iconProfile">q</string>
+    <string name="iconSmiley">u</string>
+    <string name="iconStarEmpty">v</string>
+    <string name="iconStarHalfFill">y</string>
+    <string name="iconDoubleDown">g</string>
+    <string name="iconDoubleUp">i</string>
+    <string name="iconDoubleRight">l</string>
+    <string name="iconDoubleLeft">m</string>
+
+    <!-- Tabhost -->
+    <string name="tabHome">Home</string>
+    <string name="tabFavorite">Favorites</string>
+    <string name="tabRecents">Recents</string>
+    <string name="tabHistory">History</string>
 </resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/deafultCardViewStyle"
+    android:layout_width="@dimen/recylerCourseRowWidth"
+    android:layout_height="@dimen/recylerCourseRowHeight"
+    android:layout_marginRight="@dimen/globalDimenMid"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgCell"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/recylerCourseImageHeight" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/globalDimenSmall">
+
+            <com.burgerhack.core.ui.customfontview.TextViewYMBold
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:gravity="center_horizontal"
+                android:text="Stream Title Text"
+                android:textColor="@color/cellTextColor"
+                android:textSize="@dimen/smallTextSize" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

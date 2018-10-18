@@ -1,11 +1,48 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="iconFontTextStyle">
+        <item name="android:textSize">@dimen/iconTextSize</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">@dimen/iconLayoutwidth</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="bottomTabStyle">
+        <item name="android:textSize">@dimen/iconTextTabSize</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/tab_view_selector</item>
+    </style>
+
+    <style name="deafultCardViewStyle" parent="CardView">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:foreground">?android:selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="textInputLayoutStyle" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/globalDimenMid</item>
+    </style>
+
+    <style name="autoCompleteStyle" parent="AppTheme">
+        <item name="android:digits">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:completionThreshold">1</item>
+        <item name="android:dropDownHeight">wrap_content</item>
+        <item name="android:textSize">@dimen/secondaryTextSize</item>
+    </style>
 </resources>

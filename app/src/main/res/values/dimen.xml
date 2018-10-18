@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="navHeaderVerticalSpacing">16dp</dimen>
+    <dimen name="navHeaderHeight">160dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activityHorizontalMargin">16dp</dimen>
+    <dimen name="activityVerticalMargin">16dp</dimen>
+    <dimen name="fabMargin">16dp</dimen>
+
+    <!-- Header Height-->
+    <dimen name="actionbarHeight">64dp</dimen>
+    <dimen name="tabHostHeight">52dp</dimen>
+
+    <dimen name="fabHostMarginBottom">66dp</dimen>
+
+    <!-- IconFonts dimensions-->
+    <dimen name="iconTextTabSize">24dp</dimen>
+    <dimen name="iconTextSize">28dp</dimen>
+    <dimen name="iconLayoutwidth">48dp</dimen>
+    <dimen name="defaultCardCornerRadius">8dp</dimen>
+    <dimen name="actionbarHeader">24sp</dimen>
+
+    <!-- recyler row dimensions -->
+    <dimen name="recylerCourseRowWidth">70dp</dimen>
+    <dimen name="recylerCourseImageHeight">70dp</dimen>
+    <dimen name="recylerCourseRowHeight">145dp</dimen>
+    <dimen name="recylerTitleRowHeight">48dp</dimen>
+    <dimen name="recylerBannerRowHeight">160dp</dimen>
+    <dimen name="recylerAdvRowHeight">160dp</dimen>
+
+    <!-- shadow/divider line -->
+    <integer name="shadowAngle">90</integer>
+    <dimen name="shadowHeight">1.5dp</dimen>
+    <dimen name="dividerHeight">1dp</dimen>
+
+    <!-- subjects screen-->
+    <dimen name="subjectsImageWidth">60dp</dimen>
+    <dimen name="subjectsImageHeight">60dp</dimen>
+
+    <!-- upload notes -->
+    <dimen name="addCardHeight">52dp</dimen>
+    <dimen name="addCardElevation">4dp</dimen>
+    <dimen name="defaultCardElevation">4dp</dimen>
+
+</resources>

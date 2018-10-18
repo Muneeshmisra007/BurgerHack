@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_upper_shadow" />
+
+    <com.recommended.app.utils.ui.BHTabHost
+        android:id="@+id/tabHostBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tabHostHeight"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@color/tabHostBackgound"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <include
+            android:id="@+id/tabHome"
+            layout="@layout/view_tab_home" />
+
+        <include
+            android:id="@+id/tabFavorite"
+            layout="@layout/view_tab_favorites" />
+
+        <include
+            android:id="@+id/tabProfile"
+            layout="@layout/view_tab_profile" />
+
+        <include
+            android:id="@+id/tabDownloads"
+            layout="@layout/view_tab_downloads" />
+
+    </com.recommended.app.utils.ui.BHTabHost>
+
+</LinearLayout>

@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#ff8533</color>
+    <color name="colorPrimaryDark">#ff751a</color>
+    <color name="colorAccent">#ff751a</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="tabHostBackgound">#f2f2f2</color>
+    <color name="tabIconNormalColor">#ccb3b3b3</color>
+    <color name="tabIconSelectedColor">#ff8533</color>
+
+    <color name="rowTitleTextColor">#616161</color>
+    <color name="cellTextColor">#616161</color>
+    <color name="seeMoreTextColor">#ff8533</color>
+    <color name="cardViewBackground">#f6f6f6</color>
+
+    <color name="shadowLineStartColor">#80b3b3b3</color>
+    <color name="shadowLineEndColor">#0000</color>
+
+    <!-- subjects screen -->
+    <color name="primaryTextColor">#616161</color>
+
 </resources>

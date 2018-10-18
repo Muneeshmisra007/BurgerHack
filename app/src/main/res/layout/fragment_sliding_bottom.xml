@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!-- SLIDING LAYOUT -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <com.mcdonalds.multicycler.MultiRecycler
+        android:id="@+id/rvHomeMulticyler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+</LinearLayout>
+

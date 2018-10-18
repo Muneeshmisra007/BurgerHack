@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/recylerTitleRowHeight"
+    android:layout_marginEnd="@dimen/globalDimenMid"
+    android:layout_marginRight="@dimen/globalDimenMid"
+    android:layout_marginStart="@dimen/globalDimenMid"
+    android:layout_marginLeft="@dimen/globalDimenMid"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.burgerhack.core.ui.customfontview.TextViewYMMedium
+        android:id="@+id/tvRowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/dummyRowTitle"
+        android:singleLine="true"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tvSeeMore"
+        android:layout_toStartOf="@+id/tvSeeMore"
+        android:textColor="@color/rowTitleTextColor"
+        android:layout_marginRight="@dimen/globalDimenMid"
+        android:layout_marginEnd="@dimen/globalDimenMid"
+        android:textSize="@dimen/normalTextSize"
+        android:layout_alignTop="@+id/tvSeeMore"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.burgerhack.core.ui.customfontview.TextViewYMLight
+        android:id="@+id/tvSeeMore"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible"
+        android:text="@string/seeMore"
+        android:textColor="@color/seeMoreTextColor"
+        android:textSize="@dimen/primaryTextSize" />
+
+</RelativeLayout>

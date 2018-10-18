@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!-- Global Margins and padding[referred as dimensions]-->
+<dimen name="globalDimenLarge">24dp</dimen>
+<dimen name="globalDimen">16dp</dimen>
+<dimen name="globalDimenMid">8dp</dimen>
+<dimen name="globalDimenSmall">4dp</dimen>
+<dimen name="globalDimenLittle">2dp</dimen>
+<dimen name="globalDimenMin">1dp</dimen>
+
+<!--Text sizes-->
+<dimen name="largeTextSize">24sp</dimen>
+<dimen name="mediumTextSize">22sp</dimen>
+<dimen name="normalTextSize">20sp</dimen>
+<dimen name="primaryTextSize">18sp</dimen>
+<dimen name="secondaryTextSize">16sp</dimen>
+<dimen name="tertiaryTextSize">14sp</dimen>
+<dimen name="smallTextSize">12sp</dimen>
+<dimen name="littleTextSize">11sp</dimen>
+
+</resources>

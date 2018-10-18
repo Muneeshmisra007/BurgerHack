@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/assets"/><source path="/Mcdonalds/repos/Hackathon/libraries/multicycler/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Mcdonalds/repos/Hackathon/libraries/multicycler/src/debug/assets"/></dataSet></merger>
