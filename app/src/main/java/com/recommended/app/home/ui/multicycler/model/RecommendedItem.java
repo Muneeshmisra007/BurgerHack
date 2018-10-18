@@ -3,7 +3,7 @@ package com.recommended.app.home.ui.multicycler.model;
 import com.burgerhack.multicycler.model.CellBehaviour;
 
 /**
- * Created by Muneesh on 16/10/18.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public class RecommendedItem implements CellBehaviour {

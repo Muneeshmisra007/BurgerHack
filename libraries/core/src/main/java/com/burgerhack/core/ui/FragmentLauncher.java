@@ -1,7 +1,7 @@
 package com.burgerhack.core.ui;
 
 /**
- * Created by Amritpal Singh on 5/27/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public class FragmentLauncher {

@@ -9,8 +9,8 @@ import com.bumptech.glide.Glide;
 
 /**
  * An assortment of UI related utility methods.
- * <p>
- * Created by Amritpal Singh on 8/29/16.
+ *
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class UIUtils {
 

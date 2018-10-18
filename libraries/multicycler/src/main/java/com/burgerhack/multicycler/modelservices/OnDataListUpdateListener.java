@@ -1,7 +1,7 @@
 package com.burgerhack.multicycler.modelservices;
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public interface OnDataListUpdateListener {
     public void onDataListUpdated();

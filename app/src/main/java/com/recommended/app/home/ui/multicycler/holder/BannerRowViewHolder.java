@@ -7,9 +7,8 @@ import com.burgerhack.multicycler.factory.MultiRecyclerViewFactory;
 import com.burgerhack.multicycler.model.RowBehaviour;
 
 /**
- * Created by Amritpal Singh on 5/27/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
-
 public class BannerRowViewHolder extends BaseRecylerRowViewHolder {
 
     public BannerRowViewHolder(View itemView) {

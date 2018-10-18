@@ -16,7 +16,7 @@ import java.lang.ref.WeakReference;
 
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class CellAdapter extends RecyclerView.Adapter<CellViewHolder> implements OnDataListUpdateListener {
     protected DataList<CellBehaviour> mItems;

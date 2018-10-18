@@ -5,7 +5,7 @@ import com.burgerhack.multicycler.adapters.CellAdapter;
 import com.burgerhack.multicycler.factory.MultiRecyclerViewFactory;
 
 /**
- * Created by Amritpal Singh on 5/13/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public interface RowBehaviour {

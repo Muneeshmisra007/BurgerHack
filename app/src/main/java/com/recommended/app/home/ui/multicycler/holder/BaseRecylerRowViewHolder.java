@@ -5,7 +5,7 @@ import android.view.View;
 import com.burgerhack.multicycler.viewholder.RowViewHolder;
 
 /**
- * Created by Amritpal Singh on 5/26/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public abstract class BaseRecylerRowViewHolder extends RowViewHolder {

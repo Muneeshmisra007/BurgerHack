@@ -7,7 +7,7 @@ import com.burgerhack.multicycler.viewholder.CellViewHolder;
 import com.burgerhack.multicycler.viewholder.RowViewHolder;
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public abstract class MultiRecyclerViewFactory {
     public abstract View getRowView(ViewGroup parent, int rowID);

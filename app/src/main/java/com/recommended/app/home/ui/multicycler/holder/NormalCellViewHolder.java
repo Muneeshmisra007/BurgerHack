@@ -3,7 +3,7 @@ package com.recommended.app.home.ui.multicycler.holder;
 import android.view.View;
 
 /**
- * Created by Amritpal Singh on 5/27/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public class NormalCellViewHolder extends BaseRecylerCellViewHolder {

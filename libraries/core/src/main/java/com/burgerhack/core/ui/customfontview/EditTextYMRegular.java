@@ -6,7 +6,7 @@ import android.support.design.widget.TextInputEditText;
 import android.util.AttributeSet;
 
 /**
- * Created by Amritpal Singh on 7/30/16.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class EditTextYMRegular extends TextInputEditText {
 

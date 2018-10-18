@@ -1,7 +1,7 @@
 package com.burgerhack.core.ui;
 
 /**
- * Created by Amritpal Singh on 8/29/16.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 import android.content.Context;

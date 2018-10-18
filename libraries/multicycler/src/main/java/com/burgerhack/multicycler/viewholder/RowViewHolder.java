@@ -9,7 +9,7 @@ import com.burgerhack.multicycler.model.RowBehaviour;
 
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public abstract class RowViewHolder extends RecyclerView.ViewHolder {
     public RowViewHolder(View itemView) {

@@ -14,7 +14,7 @@ import com.burgerhack.multicycler.viewholder.RowViewHolder;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class RowAdapter extends RecyclerView.Adapter<RowViewHolder> implements OnDataListUpdateListener {
 

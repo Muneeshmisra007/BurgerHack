@@ -5,9 +5,8 @@ import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
 /**
- * Created by amrit on 5/13/16.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class TextViewYMMedium extends AppCompatTextView {
 

@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Created by amrit on 6/18/16.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class IconTextView extends AppCompatTextView {
 

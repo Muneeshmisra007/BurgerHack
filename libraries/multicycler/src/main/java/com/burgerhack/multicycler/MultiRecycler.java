@@ -13,7 +13,7 @@ import com.burgerhack.multicycler.modelservices.DataList;
 import java.util.List;
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class MultiRecycler extends RecyclerView {
     private DataList<RowBehaviour> mRows;

@@ -13,9 +13,8 @@ import com.recommended.app.home.ui.multicycler.model.RecommendedItem;
 import com.recommended.app.R;
 
 /**
- * Created by Amritpal Singh on 5/26/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
-
 public abstract class BaseRecylerCellViewHolder extends CellViewHolder implements View.OnClickListener {
     private OnMultiCyclerItemClickListener listener;
     private RecommendedItem item;

@@ -13,7 +13,7 @@ import com.recommended.app.home.ui.multicycler.holder.NormalCellViewHolder;
 import com.recommended.app.home.ui.multicycler.holder.NormalRowViewHolder;
 
 /**
- * Created by Amritpal Singh on 5/26/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public class BHMulticylerFactory extends MultiRecyclerViewFactory {

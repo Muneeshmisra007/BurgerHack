@@ -7,9 +7,8 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by Amritpal Singh on 6/13/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
-
 public class NDAutoCompleteView extends AppCompatAutoCompleteTextView {
 
     public NDAutoCompleteView(Context context) {

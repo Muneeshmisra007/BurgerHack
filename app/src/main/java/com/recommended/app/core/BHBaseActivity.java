@@ -16,7 +16,7 @@ import com.recommended.app.R;
 
 
 /**
- * Created by Amritpal Singh on 5/25/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public abstract class BHBaseActivity extends BaseActivity {

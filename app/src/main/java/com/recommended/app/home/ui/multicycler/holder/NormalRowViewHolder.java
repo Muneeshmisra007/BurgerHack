@@ -11,10 +11,8 @@ import com.burgerhack.multicycler.model.RowBehaviour;
 import com.recommended.app.R;
 import com.recommended.app.home.ui.multicycler.model.RecommendedCategories;
 
-
-
 /**
- * Created by Amritpal Singh on 5/27/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public class NormalRowViewHolder extends BaseRecylerRowViewHolder {

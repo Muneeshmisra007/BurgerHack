@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Created by Amritpal Singh on 28/09/2016.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public class DataList<E> extends ArrayList<E> {
     private WeakReference<OnDataListUpdateListener> mListener;

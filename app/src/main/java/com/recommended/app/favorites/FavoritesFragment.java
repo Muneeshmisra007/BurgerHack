@@ -6,7 +6,7 @@ import com.recommended.app.R;
 
 
 /**
- * Created by Amritpal Singh on 5/27/17.
+ * Created by Amritpal Singh on 19/10/18.
  */
 
 public class FavoritesFragment extends BaseFragment {

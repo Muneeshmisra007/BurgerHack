@@ -13,9 +13,8 @@ import android.widget.ProgressBar;
 
 import com.notesdrive.core.R;
 
-
 /**
- * Created by Amritpal Singh on 8/29/16.
+ * Created by Amritpal Singh on 19/10/18.
  */
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
     private static final String TAG = BaseFragment.class.getSimpleName();
