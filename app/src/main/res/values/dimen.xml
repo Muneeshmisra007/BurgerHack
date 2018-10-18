@@ -23,9 +23,9 @@
     <dimen name="actionbarHeader">24sp</dimen>
 
     <!-- recyler row dimensions -->
-    <dimen name="recylerCourseRowWidth">70dp</dimen>
-    <dimen name="recylerCourseImageHeight">70dp</dimen>
-    <dimen name="recylerCourseRowHeight">145dp</dimen>
+    <dimen name="recylerRowWidth">120dp</dimen>
+    <dimen name="recylerImageHeight">100dp</dimen>
+    <dimen name="recylerRowHeight">150dp</dimen>
     <dimen name="recylerTitleRowHeight">48dp</dimen>
     <dimen name="recylerBannerRowHeight">160dp</dimen>
     <dimen name="recylerAdvRowHeight">160dp</dimen>

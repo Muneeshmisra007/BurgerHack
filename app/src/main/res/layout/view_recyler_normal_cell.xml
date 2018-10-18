@@ -2,8 +2,8 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/deafultCardViewStyle"
-    android:layout_width="@dimen/recylerCourseRowWidth"
-    android:layout_height="@dimen/recylerCourseRowHeight"
+    android:layout_width="@dimen/recylerRowWidth"
+    android:layout_height="@dimen/recylerRowHeight"
     android:layout_marginRight="@dimen/globalDimenMid"
     app:cardElevation="0dp">
 
@@ -15,13 +15,13 @@
         <ImageView
             android:id="@+id/imgCell"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/recylerCourseImageHeight" />
+            android:layout_height="@dimen/recylerImageHeight" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:padding="@dimen/globalDimenSmall">
 
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="Stream Title Text"
                 android:textColor="@color/cellTextColor"
                 android:textSize="@dimen/smallTextSize" />
