@@ -21,5 +21,7 @@
 
     <!-- subjects screen -->
     <color name="primaryTextColor">#616161</color>
+    <color name="globalWhiteColor">#ffffff</color>
+
 
 </resources>

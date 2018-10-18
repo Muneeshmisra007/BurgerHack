@@ -47,8 +47,8 @@ public class BHRecommendedGenerator {
             public void onResponse(Exception exception, List<Product> products) {
                 mAllProducts = products;
                 List<RowBehaviour> recommendedCategories = new ArrayList<>();
-                recommendedCategories.add(getRecommendedContent());
                 recommendedCategories.add(getTrendingContent());
+                recommendedCategories.add(getRecommendedContent());
                 recommendedCategories.add(getYouMayLikeContent());
                 asyncListener.onResponse(exception, recommendedCategories);
             }
@@ -117,7 +117,7 @@ public class BHRecommendedGenerator {
     private RecommendedCategory getTrendingContent() {
         RecommendedCategory category = new RecommendedCategory();
         category.setCategory("trending");
-        category.setLayoutId(1);
+        category.setLayoutId(2);
         category.setSeeAll(false);
         category.setTitle("Trending Macs");
         List<Product> filteredTrendingProducts = DataHelper.getInstance().getTrendingProducts(mAllProducts);

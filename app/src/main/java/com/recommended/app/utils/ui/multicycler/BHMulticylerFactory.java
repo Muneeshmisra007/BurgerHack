@@ -8,9 +8,9 @@ import com.burgerhack.multicycler.factory.MultiRecyclerViewFactory;
 import com.burgerhack.multicycler.viewholder.CellViewHolder;
 import com.burgerhack.multicycler.viewholder.RowViewHolder;
 import com.recommended.app.R;
-import com.recommended.app.utils.ui.multicycler.holder.BannerRowViewHolder;
 import com.recommended.app.utils.ui.multicycler.holder.NormalCellViewHolder;
 import com.recommended.app.utils.ui.multicycler.holder.NormalRowViewHolder;
+import com.recommended.app.utils.ui.multicycler.holder.SliderRowViewHolder;
 
 /**
  * Created by Amritpal Singh on 19/10/18.
@@ -25,7 +25,7 @@ public class BHMulticylerFactory extends MultiRecyclerViewFactory {
 
         switch (type) {
             case LAYOUT_BANNER:
-                return LayoutInflater.from(parent.getContext()).inflate(R.layout.view_recyler_banner_row, parent, false);
+                return LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_view_pager, parent, false);
             case LAYOUT_NONE://${Fall-Through}
             case LAYOUT_NORMAL:
                 return LayoutInflater.from(parent.getContext()).inflate(R.layout.view_recyler_normal_row, parent, false);
@@ -40,7 +40,7 @@ public class BHMulticylerFactory extends MultiRecyclerViewFactory {
         final LayoutType type = LayoutType.getType(rowID);
         switch (type) {
             case LAYOUT_BANNER:
-                return new BannerRowViewHolder(itemView);
+                return new SliderRowViewHolder(itemView);
 
             case LAYOUT_NORMAL:
                 return new NormalRowViewHolder(itemView);
