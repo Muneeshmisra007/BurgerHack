@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import com.notesdrive.core.R;
+import com.recommended.core.R;
+
 
 /**
  * Created by Amritpal Singh on 19/10/18.
@@ -48,7 +49,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         View rootView = getView();
         ProgressBar progressBar = rootView.findViewById(R.id.pbBaseFragmentProgress);
         View fragmentContentView = rootView.findViewById(getContainerViewGroupId());
-        View errorDisplayNetworkContainer = rootView.findViewById(R.id.containerErrorDisplay);
+        View errorDisplayNetworkContainer = rootView.findViewById(R.id.containerErrorDisplay).findViewById(R.id.containerErrorDisplay);
 
         switch (status) {
             case STATUS_LOADING:

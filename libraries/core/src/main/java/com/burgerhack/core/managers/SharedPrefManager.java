@@ -13,7 +13,7 @@ public class SharedPrefManager {
     /**
      * Preferences name
      */
-    private static String prefName = "notesdrivePreferences";
+    private static String prefName = "burgerHackPreferences";
 
     /**
      * Static instance for the singleton

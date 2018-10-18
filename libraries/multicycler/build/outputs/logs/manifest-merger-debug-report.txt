@@ -8,7 +8,7 @@ INJECTED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidM
 INJECTED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidManifest.xml:1:1-11:12
 INJECTED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidManifest.xml:1:1-11:12
 	package
-		ADDED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidManifest.xml:2:5-48
+		ADDED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidManifest.xml:2:5-42
 		INJECTED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidManifest.xml
 		INJECTED from /Mcdonalds/repos/Hackathon/libraries/multicycler/src/main/AndroidManifest.xml
 	android:versionName

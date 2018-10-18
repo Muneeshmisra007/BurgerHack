@@ -26,12 +26,12 @@
             layout="@layout/view_tab_favorites" />
 
         <include
-            android:id="@+id/tabProfile"
-            layout="@layout/view_tab_profile" />
+            android:id="@+id/tabRecents"
+            layout="@layout/view_tab_recents" />
 
         <include
-            android:id="@+id/tabDownloads"
-            layout="@layout/view_tab_downloads" />
+            android:id="@+id/tabHistory"
+            layout="@layout/view_tab_history" />
 
     </com.recommended.app.utils.ui.BHTabHost>
 

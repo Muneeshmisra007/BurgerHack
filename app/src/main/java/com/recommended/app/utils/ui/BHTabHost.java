@@ -40,8 +40,8 @@ public class BHTabHost extends LinearLayout implements View.OnClickListener {
     private void initViews() {
         mHomeTab = (ViewGroup) findViewById(R.id.tabHome);
         mFavoriteTab = (ViewGroup) findViewById(R.id.tabFavorite);
-        mProfileTab = (ViewGroup) findViewById(R.id.tabProfile);
-        mDownloadsTab = (ViewGroup) findViewById(R.id.tabDownloads);
+        mProfileTab = (ViewGroup) findViewById(R.id.tabRecents);
+        mDownloadsTab = (ViewGroup) findViewById(R.id.tabHistory);
 
         mHomeTab.setTag(TAB.HOME);
         mFavoriteTab.setTag(TAB.FAVORITES);

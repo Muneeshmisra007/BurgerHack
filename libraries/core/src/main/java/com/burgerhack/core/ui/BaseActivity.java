@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 /**
- * Activity that has the responsibility of handling all base level tasks in NotesDrive Application.
+ * Activity that has the responsibility of handling all base level tasks in Burger Hack Application.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 

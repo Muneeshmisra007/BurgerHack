@@ -10,5 +10,5 @@ import com.burgerhack.multicycler.model.CellBehaviour;
  */
 public interface OnMultiCyclerItemClickListener {
 
-    public void onMultiCyclerItemClick(View view, CellBehaviour cellItem);
+    void onMultiCyclerItemClick(View view, CellBehaviour cellItem);
 }

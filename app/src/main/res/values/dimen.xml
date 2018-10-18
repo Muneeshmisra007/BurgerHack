@@ -29,6 +29,9 @@
     <dimen name="recylerTitleRowHeight">48dp</dimen>
     <dimen name="recylerBannerRowHeight">160dp</dimen>
     <dimen name="recylerAdvRowHeight">160dp</dimen>
+    <dimen name="recylerGridCellImageHeight">100dp</dimen>
+    <dimen name="recylerGridCellHeight">130dp</dimen>
+
 
     <!-- shadow/divider line -->
     <integer name="shadowAngle">90</integer>

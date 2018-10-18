@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.snaptrakr.android.multicycler">
+    package="com.recommended.multicycler">
 
     <application
         android:allowBackup="true"

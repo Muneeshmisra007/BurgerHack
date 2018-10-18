@@ -3,7 +3,7 @@ package com.recommended.app.home;
 import android.os.Bundle;
 
 import com.recommended.app.core.BHBaseActivity;
-import com.recommended.app.downloads.RecentsFragment;
+import com.recommended.app.recents.RecentsFragment;
 import com.recommended.app.favorites.FavoritesFragment;
 import com.recommended.app.home.fragments.HomeFragment;
 import com.recommended.app.profile.HistoryFragment;

@@ -19,7 +19,7 @@ buildscript {
         gradleVer = "2.3.2"
 
         // SDK
-        applicationId = "com.recommended.app"
+        applicationId = "app.recommended.com"
         minSdk = 15
         targetSdk = 26
         compileSdk = 26
