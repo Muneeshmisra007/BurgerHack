@@ -10,28 +10,54 @@ public class RecommendedItem implements CellBehaviour {
     public String id;
     public String imageUrl;
     public String title;
-    public int energyInfo;
+    private int calories;
+    private float rating;
 
-    public RecommendedItem(String id, String imageUrl, String title, int energyInfo) {
+    public RecommendedItem(String id, String imageUrl, String title, int calories, float rating) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.title = title;
-        this.energyInfo = energyInfo;
+        this.calories = calories;
+        this.rating = rating;
     }
 
     public String getId() {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getEnergyInfo() {
-        return energyInfo;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 }

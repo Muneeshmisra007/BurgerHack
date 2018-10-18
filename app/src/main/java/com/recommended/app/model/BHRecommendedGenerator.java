@@ -127,7 +127,9 @@ public class BHRecommendedGenerator {
             RecommendedItem recommendedItem = new RecommendedItem(recommendedProduct.getProductId(),
                     recommendedProduct.getImageUrl(),
                     recommendedProduct.getProductName(),
-                    recommendedProduct.getCalories());
+                    recommendedProduct.getCalories(),
+                    recommendedProduct.getRating()
+                    );
             recommendedItems.add(recommendedItem);
         }
         return recommendedItems;
