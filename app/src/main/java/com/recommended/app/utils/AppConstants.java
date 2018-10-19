@@ -11,5 +11,5 @@ public class AppConstants {
     public static final String TAG_FAVORITES = "favorites";
     public static final String TAG_RECENTS = "recents";
     public static final String TAG_HISTORY = "history";
-    public static final String TAG_DETAILS = "details";
+    public static final String TAG_HOME = "home";
 }
