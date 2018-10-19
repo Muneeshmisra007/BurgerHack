@@ -26,21 +26,17 @@
             android:layout_gravity="center_vertical"
             android:singleLine="true"
             android:text="Movie title"
-            android:textColor="@color/globalWhiteColor"
+            android:textColor="@color/white"
             android:textSize="@dimen/sliderTitleTextSize" />
-
-
-        <TextView
-            android:id="@+id/tvSliderCellSubTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="@dimen/globalDimenMid"
-            android:singleLine="true"
-            android:text="Movie Subtitle"
-            android:textColor="@color/globalWhiteColor"
-            android:textSize="@dimen/sliderSubTitleTextSize" />
-
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:singleLine="true"
+        android:gravity="end"
+        android:text="[Trending]"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sliderSubTitleTextSize" />
 
 </FrameLayout>

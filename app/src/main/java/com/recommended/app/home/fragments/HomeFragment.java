@@ -64,6 +64,7 @@ public class HomeFragment extends BaseFragment implements OnMultiCyclerItemClick
 
     @Override
     public void onResponse(Exception exception, List<RowBehaviour> response) {
+        showStatus(STATUS.STATUS_SUCCESS);
         mMultiRecycler.addData(response);
     }
 }

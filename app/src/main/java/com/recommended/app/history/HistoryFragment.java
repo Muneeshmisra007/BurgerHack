@@ -55,7 +55,6 @@ public class HistoryFragment extends BaseFragment implements AsyncListener<List<
         mRvHistory.setAdapter(mHistoryAdapter);
         mRvHistory.setNestedScrollingEnabled(false);
         BHRecommendedGenerator.getInstance().getBrowseHistory(this);
-
     }
 
     @Override
