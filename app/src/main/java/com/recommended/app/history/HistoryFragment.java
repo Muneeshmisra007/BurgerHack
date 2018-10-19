@@ -54,6 +54,7 @@ public class HistoryFragment extends BaseFragment implements AsyncListener<List<
         mHistoryAdapter = new RecommendedGridAdapter(new ArrayList(), listener);
         mRvHistory.setAdapter(mHistoryAdapter);
         mRvHistory.setNestedScrollingEnabled(false);
+        showStatus(STATUS.STATUS_LOADING);
         BHRecommendedGenerator.getInstance().getBrowseHistory(this);
     }
 
@@ -74,6 +75,7 @@ public class HistoryFragment extends BaseFragment implements AsyncListener<List<
 
     @Override
     public void onResponse(Exception exception, List<RecommendedItem> response) {
+        showStatus(STATUS.STATUS_SUCCESS);
         mHistoryAdapter.updateAdapter(response);
     }
 

@@ -52,6 +52,7 @@ public class RecentsFragment extends BaseFragment implements AsyncListener<List<
         mRecentsAdapter = new RecommendedGridAdapter(new ArrayList(), listener);
         mRvRecents.setAdapter(mRecentsAdapter);
         mRvRecents.setNestedScrollingEnabled(false);
+        showStatus(STATUS.STATUS_LOADING);
         BHRecommendedGenerator.getInstance().getRecentsList(this);
     }
 
@@ -63,7 +64,7 @@ public class RecentsFragment extends BaseFragment implements AsyncListener<List<
 
     @Override
     protected int getContainerViewGroupId() {
-        return R.id.rvHistory;
+        return R.id.rvRecents;
     }
 
     @Override
@@ -73,6 +74,7 @@ public class RecentsFragment extends BaseFragment implements AsyncListener<List<
 
     @Override
     public void onResponse(Exception exception, List<RecommendedItem> response) {
+        showStatus(STATUS.STATUS_SUCCESS);
         mRecentsAdapter.updateAdapter(response);
     }
 
