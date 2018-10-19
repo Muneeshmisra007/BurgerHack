@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.burgerhack.multicycler.OnMultiCyclerItemClickListener;
-import com.burgerhack.multicycler.modelservices.DataList;
-import com.burgerhack.multicycler.modelservices.OnDataListUpdateListener;
 import com.recommended.app.R;
 import com.recommended.app.utils.ui.RecyclerViewClickListener;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
@@ -26,11 +24,8 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
 
     private static final String TAG = SliderViewPagerAdapter.class.getSimpleName();
     private ArrayList<RecommendedItem> mRecommendedItem;
-    private RecommendedItem recommendedItem;
     private Context mContext;
     private OnMultiCyclerItemClickListener mOnMultiCyclerItemClickListener;
-    private ViewPager mContainer;
-    private RecyclerViewClickListener mListener;
 
 
     public SliderViewPagerAdapter(Context context, ArrayList<RecommendedItem> itemVOList, OnMultiCyclerItemClickListener listener) {
@@ -42,23 +37,22 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        mContainer = (ViewPager) container;
         View view = LayoutInflater.from(mContext).inflate(R.layout.slider_cell_layout, container, false);
-        recommendedItem = mRecommendedItem.get(position);
         initView(view, mRecommendedItem.get(position), position);
-        view.setTag(R.id.idViewPagerItem, mRecommendedItem.get(position));
-        view.setOnClickListener(this);
         container.addView(view);
 
         return view;
     }
 
     private void initView(View v, RecommendedItem recommendedItem, int position) {
+
         ImageView imageView = v.findViewById(R.id.imgSliderPoster);
         imageView.setImageDrawable(null);
         Glide.with(v.getContext()).load(recommendedItem.getImageUrl()).
                 placeholder(R.drawable.default_placeholder).into(imageView);
         ((TextView) v.findViewById(R.id.tvSliderCellTitle)).setText(recommendedItem.getTitle());
+        imageView.setTag(R.id.idViewPagerItem, mRecommendedItem.get(position));
+        imageView.setOnClickListener(this);
     }
 
     @Override
@@ -78,7 +72,7 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        mOnMultiCyclerItemClickListener.onMultiCyclerItemClick(v, recommendedItem);
+        mOnMultiCyclerItemClickListener.onMultiCyclerItemClick(v, (RecommendedItem) v.getTag(R.id.idViewPagerItem));
     }
 
     public int getItemPosition(Object object) {
