@@ -30,6 +30,10 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
 
     MultiRecycler mMultiRecycler;
     RecommendedItem mRecommendedItem;
+    TextViewYMBold title;
+    TextViewYMBold calories;
+    TextViewYMBold rating;
+    ImageView productImage;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -38,25 +42,17 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
         mMultiRecycler.setMultiCyclerData(new BHMulticylerFactory(), this);
         Bundle arguments = getArguments();
         mRecommendedItem = (RecommendedItem) arguments.getSerializable(BUNDLE_KEY_PRODUCT);
-        executeWebService();
         initializeLayout(view);
+        loadFragmentView();
     }
 
     private void initializeLayout(View view) {
         showStatus(STATUS.STATUS_SUCCESS);
-        TextViewYMBold title = view.findViewById(R.id.tvTitle);
-        TextViewYMBold calories = view.findViewById(R.id.tvCal);
-        TextViewYMBold rating = view.findViewById(R.id.tvRating);
-        ImageView productImage = view.findViewById(R.id.imgImage);
+        title = view.findViewById(R.id.tvTitle);
+        calories = view.findViewById(R.id.tvCal);
+        rating = view.findViewById(R.id.tvRating);
+        productImage = view.findViewById(R.id.imgImage);
         view.setOnClickListener(null);
-        if (mRecommendedItem != null) {
-            title.setText(mRecommendedItem.title);
-            rating.setText(mRecommendedItem.getRating() + "");
-            calories.setText(mRecommendedItem.getCalories() + " Cal");
-            Glide.with(this).load(mRecommendedItem.getImageUrl()).
-                    placeholder(R.drawable.default_placeholder).into(productImage);
-
-        }
     }
 
     @Override
@@ -77,12 +73,33 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
 
     @Override
     public void onMultiCyclerItemClick(View view, CellBehaviour cellItem) {
+        RecommendedItem recommendedItem = (RecommendedItem)cellItem;
+        mRecommendedItem = recommendedItem;
+        loadFragmentView();
+
+    }
+
+    private void setDetailData()
+    {
+        if (mRecommendedItem != null) {
+            title.setText(mRecommendedItem.getTitle());
+            rating.setText(mRecommendedItem.getRating() + "");
+            calories.setText(mRecommendedItem.getCalories() + " Cal");
+            Glide.with(this).load(mRecommendedItem.getImageUrl()).
+                    placeholder(R.drawable.default_placeholder).into(productImage);
+        }
+    }
+
+    private void loadFragmentView()
+    {
+        setDetailData();
+        executeWebService();
     }
 
     @Override
     public void onResponse(Exception exception, List<RowBehaviour> response) {
         showStatus(STATUS.STATUS_SUCCESS);
-        mMultiRecycler.addData(response);
+        mMultiRecycler.resetAdapterWith(response);
     }
 
     private void executeWebService() {
