@@ -46,7 +46,7 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
         View view = LayoutInflater.from(mContext).inflate(R.layout.slider_cell_layout, container, false);
         recommendedItem = mRecommendedItem.get(position);
         initView(view, mRecommendedItem.get(position), position);
-        view.setTag(R.id.idViewPagerItem, );
+        view.setTag(R.id.idViewPagerItem, mRecommendedItem.get(position));
         view.setOnClickListener(this);
         container.addView(view);
 
