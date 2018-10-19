@@ -34,7 +34,6 @@ public class MainActivity extends BHBaseActivity implements BHTabHost.OnTabClick
         mTabHost = findViewById(R.id.tabHostBottom);
         mTabHost.setOnTabClickListener(this);
         setHeaderText(getResources().getString(R.string.app_name));
-        toggleSearchVisibility(true);
     }
 
     public void navigateToTabFragment(BHTabHost.TAB tab) {
@@ -49,14 +48,14 @@ public class MainActivity extends BHBaseActivity implements BHTabHost.OnTabClick
                     launchFragmentInMainContainer(new FavoritesFragment(), getMainContainerId(), false, false);
                 }
                 break;
-            case DOWNLOADS:
-                if (!isFragmentAlreadyLoaded(getMainContainerId(), RecentsFragment.class)) {
-                    launchFragmentInMainContainer(new RecentsFragment(), getMainContainerId(), false, false);
-                }
-                break;
-            case PROFILE:
+            case HISTORY:
                 if (!isFragmentAlreadyLoaded(getMainContainerId(), HistoryFragment.class)) {
                     launchFragmentInMainContainer(new HistoryFragment(), getMainContainerId(), false, false);
+                }
+                break;
+            case RECENTS:
+                if (!isFragmentAlreadyLoaded(getMainContainerId(), RecentsFragment.class)) {
+                    launchFragmentInMainContainer(new RecentsFragment(), getMainContainerId(), false, false);
                 }
             default:
 

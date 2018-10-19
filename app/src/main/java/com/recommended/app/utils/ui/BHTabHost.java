@@ -45,8 +45,8 @@ public class BHTabHost extends LinearLayout implements View.OnClickListener {
 
         mHomeTab.setTag(TAB.HOME);
         mFavoriteTab.setTag(TAB.FAVORITES);
-        mProfileTab.setTag(TAB.PROFILE);
-        mDownloadsTab.setTag(TAB.DOWNLOADS);
+        mProfileTab.setTag(TAB.RECENTS);
+        mDownloadsTab.setTag(TAB.HISTORY);
     }
 
     private void propagateClickEvent(TAB tab, ViewGroup viewGroup) {
@@ -129,7 +129,7 @@ public class BHTabHost extends LinearLayout implements View.OnClickListener {
     }
 
     public enum TAB {
-        HOME, FAVORITES, PROFILE, DOWNLOADS
+        HOME, FAVORITES, RECENTS, HISTORY
     }
 
     public interface OnTabClickListener {

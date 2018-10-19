@@ -96,7 +96,7 @@ public class BHRecommendedGenerator {
         getAllProducts(new AsyncListener<List<Product>>() {
             @Override
             public void onResponse(Exception exception, List<Product> products) {
-                List<Product> filteredBrowseItems = DataHelper.getInstance().getRecentProducts(products);
+                List<Product> filteredBrowseItems = DataHelper.getInstance().getProductHistory(products);
                 List<RecommendedItem> browseItems = getItemsList(filteredBrowseItems);
                 asyncListener.onResponse(exception, browseItems);
             }
@@ -142,7 +142,7 @@ public class BHRecommendedGenerator {
         category.setLayoutId(1);
         category.setSeeAll(false);
         category.setTitle("You May Also Like");
-        List<Product> filteredYAMLItems = DataHelper.getInstance().getTrendingProducts(mAllProducts);
+        List<Product> filteredYAMLItems = DataHelper.getInstance().getYAMLProducts(mAllProducts);
         category.setRecommendedItems(getItemsList(filteredYAMLItems));
         return category;
     }

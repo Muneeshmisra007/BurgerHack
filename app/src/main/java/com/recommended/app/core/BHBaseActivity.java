@@ -23,7 +23,6 @@ import com.recommended.app.network.FireBaseDataProviderImpl;
 public abstract class BHBaseActivity extends BaseActivity {
 
     ViewGroup mMainToolBar;
-    View mSearchIcon;
     View mHomeIcon;
     TextView mTvHeader;
 
@@ -53,7 +52,6 @@ public abstract class BHBaseActivity extends BaseActivity {
 
     private void initialiseViews() {
         mMainToolBar = (ViewGroup) findViewById(R.id.mainToolBar);
-        mSearchIcon = findViewById(R.id.tvSearch);
         mHomeIcon = findViewById(R.id.tvHome);
         mTvHeader = (TextView) findViewById(R.id.tvHeader);
     }
@@ -63,15 +61,6 @@ public abstract class BHBaseActivity extends BaseActivity {
     protected void setHeaderText(String text) {
         if (!TextUtils.isEmpty(text)) {
             mTvHeader.setText(text);
-        }
-    }
-
-    protected void toggleSearchVisibility(boolean toShow) {
-
-        if (toShow) {
-            mSearchIcon.setVisibility(View.VISIBLE);
-        } else {
-            mSearchIcon.setVisibility(View.GONE);
         }
     }
 

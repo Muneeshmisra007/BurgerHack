@@ -34,7 +34,16 @@ public class DataHelper {
             }
         }
         return recentList;
+    }
 
+    public List<Product> getProductHistory(List<Product> list) {
+        List<Product> productHistory = new ArrayList<>();
+        for (Product product : list) {
+            if (product.getViewCount() > 3) {
+                productHistory.add(product);
+            }
+        }
+        return productHistory;
     }
 
     public List<Product> getFavouriteProducts(List<Product> list) {
@@ -59,13 +68,20 @@ public class DataHelper {
     }
 
     public List<Product> getRecommendedProducts(List<Product> list) {
-        //top
-//        List<Product> recommended = new ArrayList<>();
-//        recommended.addAll(getTrendingProducts(list).subList(0, 1));
-//        recommended.addAll(getFavouriteProducts(list).subList(0, 1));
-//        recommended.addAll(getRecentProducts(list).subList(0, 1));
-        return list;
+        List<Product> recommended = new ArrayList<>();
+        recommended.addAll(getFavouriteProducts(list).subList(0, 3));
+        recommended.addAll(getRecentProducts(list).subList(0, 3));
+        recommended.addAll(getProductHistory(list).subList(0, 3));
+        return recommended;
+    }
 
+    public List<Product> getYAMLProducts(List<Product> list) {
+        List<Product> recommendedProducts = getRecommendedProducts(list);
+        List<Product> trendingProducts = getTrendingProducts(list);
+        ArrayList<Product> allProductsList = new ArrayList<>(list);
+        allProductsList.removeAll(recommendedProducts);
+        allProductsList.removeAll(trendingProducts);
+        return allProductsList;
     }
 
 }
