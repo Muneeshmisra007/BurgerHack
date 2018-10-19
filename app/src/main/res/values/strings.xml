@@ -39,4 +39,8 @@
     <string name="tabFavorite">Favorites</string>
     <string name="tabRecents">Recents</string>
     <string name="tabHistory">History</string>
+    <string name="homeHeader">Let\'s hook you up with a good lunch</string>
+    <string name="favHeader">All Time Favorites</string>
+    <string name="recHeader">Recent Orders</string>
+    <string name="historyHeader">Your browse history</string>
 </resources>

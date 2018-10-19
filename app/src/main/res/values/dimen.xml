@@ -20,7 +20,7 @@
     <dimen name="iconTextSize">28dp</dimen>
     <dimen name="iconLayoutwidth">48dp</dimen>
     <dimen name="defaultCardCornerRadius">8dp</dimen>
-    <dimen name="actionbarHeader">24sp</dimen>
+    <dimen name="actionbarHeader">20sp</dimen>
 
     <!-- recyler row dimensions -->
     <dimen name="recylerRowWidth">120dp</dimen>
@@ -30,7 +30,7 @@
     <dimen name="recylerBannerRowHeight">160dp</dimen>
     <dimen name="recylerAdvRowHeight">160dp</dimen>
     <dimen name="recylerGridCellImageHeight">100dp</dimen>
-    <dimen name="recylerGridCellHeight">130dp</dimen>
+    <dimen name="recylerGridCellHeight">140dp</dimen>
 
 
     <!-- shadow/divider line -->

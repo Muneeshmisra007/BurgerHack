@@ -2,14 +2,13 @@ package com.recommended.app.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.burgerhack.core.ui.customfontview.TextViewYMBold;
 import com.burgerhack.core.ui.BaseFragment;
+import com.burgerhack.core.ui.customfontview.TextViewYMBold;
 import com.burgerhack.multicycler.MultiRecycler;
 import com.burgerhack.multicycler.OnMultiCyclerItemClickListener;
 import com.burgerhack.multicycler.model.CellBehaviour;
@@ -17,7 +16,6 @@ import com.burgerhack.multicycler.model.RowBehaviour;
 import com.recommended.app.R;
 import com.recommended.app.model.BHRecommendedGenerator;
 import com.recommended.app.network.AsyncListener;
-import com.recommended.app.utils.AppConstants;
 import com.recommended.app.utils.ui.multicycler.BHMulticylerFactory;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
@@ -34,6 +32,10 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
     TextViewYMBold calories;
     TextViewYMBold rating;
     ImageView productImage;
+    TextView mTvDescription;
+    String[] textString = new String[]{"Taste the Flavour of Freshness",
+            "Yummy and Delicious that will make your day",
+            "Mouth Watering Flavour that satisfies your appetite."};
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
         calories = view.findViewById(R.id.tvCal);
         rating = view.findViewById(R.id.tvRating);
         productImage = view.findViewById(R.id.imgImage);
+        mTvDescription = view.findViewById(R.id.tvDescription);
         view.setOnClickListener(null);
     }
 
@@ -73,25 +76,26 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
 
     @Override
     public void onMultiCyclerItemClick(View view, CellBehaviour cellItem) {
-        RecommendedItem recommendedItem = (RecommendedItem)cellItem;
+        RecommendedItem recommendedItem = (RecommendedItem) cellItem;
         mRecommendedItem = recommendedItem;
         loadFragmentView();
 
     }
 
-    private void setDetailData()
-    {
+    private void setDetailData() {
         if (mRecommendedItem != null) {
             title.setText(mRecommendedItem.getTitle());
             rating.setText(mRecommendedItem.getRating() + "");
             calories.setText(mRecommendedItem.getCalories() + " Cal");
             Glide.with(this).load(mRecommendedItem.getImageUrl()).
                     placeholder(R.drawable.default_placeholder).into(productImage);
+            int index = (int)(3* Math.random());
+            String text = textString[index];
+            mTvDescription.setText(mRecommendedItem.getTitle() + "\n" + text);
         }
     }
 
-    private void loadFragmentView()
-    {
+    private void loadFragmentView() {
         setDetailData();
         executeWebService();
     }

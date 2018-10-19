@@ -14,7 +14,7 @@
         android:text="@string/iconSmiley"
         android:textColor="@android:color/white" />
 
-    <com.burgerhack.core.ui.customfontview.TextViewYMMedium
+    <com.burgerhack.core.ui.customfontview.TextViewYMLight
         android:id="@+id/tvHeader"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
         android:layout_weight="1"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="@string/app_name"
+        android:text="@string/homeHeader"
         android:textColor="@color/white"
         android:textSize="@dimen/actionbarHeader" />
 

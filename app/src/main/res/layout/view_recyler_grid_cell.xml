@@ -4,7 +4,7 @@
     style="@style/deafultCardViewStyle"
     android:layout_width="match_parent"
     android:layout_height="@dimen/recylerGridCellHeight"
-    android:layout_marginRight="@dimen/globalDimenMid"
+    android:layout_margin="@dimen/globalDimenSmall"
     app:cardElevation="0dp">
 
     <LinearLayout

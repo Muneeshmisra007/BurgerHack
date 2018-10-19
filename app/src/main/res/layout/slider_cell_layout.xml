@@ -29,14 +29,15 @@
             android:textColor="@color/white"
             android:textSize="@dimen/sliderTitleTextSize" />
     </LinearLayout>
-    <TextView
+    <com.burgerhack.core.ui.customfontview.TextViewYMLight
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
         android:singleLine="true"
         android:gravity="end"
+        android:padding="@dimen/globalDimenMin"
         android:text="[Trending]"
         android:textColor="@color/white"
-        android:textSize="@dimen/sliderSubTitleTextSize" />
+        android:textSize="@dimen/secondaryTextSize" />
 
 </FrameLayout>
