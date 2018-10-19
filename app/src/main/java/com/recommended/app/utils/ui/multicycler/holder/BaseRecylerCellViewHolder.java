@@ -37,6 +37,7 @@ public abstract class BaseRecylerCellViewHolder extends CellViewHolder implement
         Glide.with(itemView.getContext()).load(recommendedItem.getImageUrl()).
                 placeholder(R.drawable.default_placeholder).into(imageView);
         imageView.setOnClickListener(this);
+        itemView.setOnClickListener(this);
     }
 
     @Override

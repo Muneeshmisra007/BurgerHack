@@ -55,4 +55,10 @@
     <dimen name="sliderTitleTextSize">27dp</dimen>
     <dimen name="sliderSubTitleTextSize">14dp</dimen>
 
+    <!--UI dimens, margins-->
+    <dimen name="heightRecycleView">320dp</dimen>
+    <dimen name="placeHolderDimens">180dp</dimen>
+    <dimen name="cardDimens">200dp</dimen>
+
+
 </resources>

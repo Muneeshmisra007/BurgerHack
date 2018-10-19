@@ -68,7 +68,7 @@ public class MainActivity extends BHBaseActivity implements BHTabHost.OnTabClick
         navigateToTabFragment(tab);
     }
 
-    private int getMainContainerId() {
+    public int getMainContainerId() {
         return R.id.mainFragmentContainer;
     }
 }

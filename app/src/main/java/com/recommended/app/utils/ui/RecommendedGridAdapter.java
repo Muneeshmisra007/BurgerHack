@@ -19,10 +19,12 @@ import java.util.List;
  */
 public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGridAdapter.GridViewHolder> {
 
+    private RecyclerViewClickListener mListener;
     private List<RecommendedItem> gridItems;
 
-    public RecommendedGridAdapter(List<RecommendedItem> recommendedItems) {
+    public RecommendedGridAdapter(List<RecommendedItem> recommendedItems, RecyclerViewClickListener listener) {
         gridItems = recommendedItems;
+        mListener = listener;
     }
 
     public void updateAdapter(List<RecommendedItem> recommendedItems) {
@@ -37,7 +39,7 @@ public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGrid
     @Override
     public GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_recyler_grid_cell, parent, false);
-        return new GridViewHolder(v);
+        return new GridViewHolder(v, mListener);
     }
 
     @Override
@@ -50,15 +52,22 @@ public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGrid
         return gridItems.size();
     }
 
+    public List<RecommendedItem> getItemsList() {
+        return gridItems;
+    }
+
     public class GridViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView mTvTitle;
         ImageView mImage;
+        private RecyclerViewClickListener mListener;
 
-        public GridViewHolder(View itemView) {
+        public GridViewHolder(View itemView, RecyclerViewClickListener listener) {
             super(itemView);
             mTvTitle = itemView.findViewById(R.id.tvTitle);
             mImage = itemView.findViewById(R.id.imgCell);
+            mListener = listener;
+            itemView.setOnClickListener(this);
         }
 
 
@@ -71,12 +80,7 @@ public class RecommendedGridAdapter extends RecyclerView.Adapter<RecommendedGrid
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-            }
-        }
-
-        public List<RecommendedItem> getItemsList() {
-            return gridItems;
+            mListener.onClick(v, getAdapterPosition());
         }
     }
 }

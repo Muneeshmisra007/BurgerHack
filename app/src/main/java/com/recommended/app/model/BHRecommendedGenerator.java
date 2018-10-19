@@ -59,12 +59,12 @@ public class BHRecommendedGenerator {
      * TODO: Need to change implementation of this method
      * @param asyncListener
      */
-    public void customerAlsoBought(final AsyncListener<List<RowBehaviour>> asyncListener) {
+    public void customerAlsoBought(final RecommendedItem recommendedItem, final AsyncListener<List<RowBehaviour>> asyncListener) {
         getAllProducts(new AsyncListener<List<Product>>() {
             @Override
             public void onResponse(Exception exception, List<Product> products) {
                 List<RowBehaviour> recommendedCategories = new ArrayList<>();
-                recommendedCategories.add(getAlsoBought());
+                recommendedCategories.add(getAlsoBought(recommendedItem));
                 asyncListener.onResponse(exception, recommendedCategories);
             }
         });
@@ -125,14 +125,14 @@ public class BHRecommendedGenerator {
         return category;
     }
 
-    private RecommendedCategory getAlsoBought() {
+    private RecommendedCategory getAlsoBought(RecommendedItem recommendedItem) {
         RecommendedCategory category = new RecommendedCategory();
         category.setCategory("Customer Also Bought");
         category.setLayoutId(1);
         category.setSeeAll(false);
         category.setTitle("Customer Also Bought");
-        List<Product> filteredTrendingProducts = DataHelper.getInstance().getTrendingProducts(mAllProducts);
-        category.setRecommendedItems(getItemsList(filteredTrendingProducts));
+        List<Product> filteredCrossSellProducts = DataHelper.getInstance().getCrossSellProducts(recommendedItem, mAllProducts);
+        category.setRecommendedItems(getItemsList(filteredCrossSellProducts));
         return category;
     }
 
@@ -154,7 +154,8 @@ public class BHRecommendedGenerator {
                     recommendedProduct.getImageUrl(),
                     recommendedProduct.getProductName(),
                     recommendedProduct.getCalories(),
-                    recommendedProduct.getRating()
+                    recommendedProduct.getRating(),
+                    recommendedProduct.getCrossSellProducts()
                     );
             recommendedItems.add(recommendedItem);
         }

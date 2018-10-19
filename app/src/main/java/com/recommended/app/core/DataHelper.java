@@ -1,6 +1,7 @@
 package com.recommended.app.core;
 
 import com.recommended.app.model.Product;
+import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,20 @@ public class DataHelper {
             }
         }
         return trendingProducts;
+    }
+
+    public List<Product> getCrossSellProducts(RecommendedItem recommendedItem, List<Product> list) {
+        ArrayList<String> crossSellProductsList = recommendedItem.getCrossSellProducts();
+        List<Product> crossSellProducts = new ArrayList<>();
+        for (Product product : list) {
+            for (String crossProductID : crossSellProductsList) {
+                if (product.getProductId().equalsIgnoreCase(crossProductID)) {
+                    crossSellProducts.add(product);
+                    break;
+                }
+            }
+        }
+        return crossSellProducts;
     }
 
     public List<Product> getRecommendedProducts(List<Product> list) {

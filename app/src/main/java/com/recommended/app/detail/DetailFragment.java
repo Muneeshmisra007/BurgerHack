@@ -2,8 +2,10 @@ package com.recommended.app.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.burgerhack.core.ui.customfontview.TextViewYMBold;
@@ -15,13 +17,16 @@ import com.burgerhack.multicycler.model.RowBehaviour;
 import com.recommended.app.R;
 import com.recommended.app.model.BHRecommendedGenerator;
 import com.recommended.app.network.AsyncListener;
+import com.recommended.app.utils.AppConstants;
 import com.recommended.app.utils.ui.multicycler.BHMulticylerFactory;
 import com.recommended.app.utils.ui.multicycler.model.RecommendedItem;
 
 import java.util.List;
 
+import static com.recommended.app.utils.AppConstants.BUNDLE_KEY_PRODUCT;
 
-public class DetailFragment extends BaseFragment implements OnMultiCyclerItemClickListener,AsyncListener<List<RowBehaviour>> {
+
+public class DetailFragment extends BaseFragment implements OnMultiCyclerItemClickListener, AsyncListener<List<RowBehaviour>> {
 
     MultiRecycler mMultiRecycler;
     RecommendedItem mRecommendedItem;
@@ -31,16 +36,19 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
         super.onViewCreated(view, savedInstanceState);
         mMultiRecycler = view.findViewById(R.id.rvCrossSell);
         mMultiRecycler.setMultiCyclerData(new BHMulticylerFactory(), this);
+        Bundle arguments = getArguments();
+        mRecommendedItem = (RecommendedItem) arguments.getSerializable(BUNDLE_KEY_PRODUCT);
         executeWebService();
         initializeLayout(view);
     }
 
     private void initializeLayout(View view) {
-        TextViewYMBold title= view.findViewById(R.id.tvTitle);
-        TextViewYMBold calories= view.findViewById(R.id.tvCal);
-        TextViewYMBold rating= view.findViewById(R.id.tvRating);
-        ImageView productImage=view.findViewById(R.id.imgImage);
-        if(mRecommendedItem!=null) {
+        TextViewYMBold title = view.findViewById(R.id.tvTitle);
+        TextViewYMBold calories = view.findViewById(R.id.tvCal);
+        TextViewYMBold rating = view.findViewById(R.id.tvRating);
+        ImageView productImage = view.findViewById(R.id.imgImage);
+        view.setOnClickListener(null);
+        if (mRecommendedItem != null) {
             title.setText(mRecommendedItem.title);
             rating.setText(mRecommendedItem.getRating() + "");
             calories.setText(mRecommendedItem.getCalories() + " Cal");
@@ -68,7 +76,6 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
 
     @Override
     public void onMultiCyclerItemClick(View view, CellBehaviour cellItem) {
-
     }
 
     @Override
@@ -78,6 +85,11 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
 
     private void executeWebService() {
         showStatus(STATUS.STATUS_LOADING);
-        BHRecommendedGenerator.getInstance().customerAlsoBought(this);
+        BHRecommendedGenerator.getInstance().customerAlsoBought(mRecommendedItem, this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }
