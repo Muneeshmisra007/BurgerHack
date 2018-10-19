@@ -43,6 +43,7 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
     }
 
     private void initializeLayout(View view) {
+        showStatus(STATUS.STATUS_SUCCESS);
         TextViewYMBold title = view.findViewById(R.id.tvTitle);
         TextViewYMBold calories = view.findViewById(R.id.tvCal);
         TextViewYMBold rating = view.findViewById(R.id.tvRating);
@@ -80,6 +81,7 @@ public class DetailFragment extends BaseFragment implements OnMultiCyclerItemCli
 
     @Override
     public void onResponse(Exception exception, List<RowBehaviour> response) {
+        showStatus(STATUS.STATUS_SUCCESS);
         mMultiRecycler.addData(response);
     }
 

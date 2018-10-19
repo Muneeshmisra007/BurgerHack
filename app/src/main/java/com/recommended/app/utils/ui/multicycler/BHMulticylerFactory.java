@@ -24,6 +24,8 @@ public class BHMulticylerFactory extends MultiRecyclerViewFactory {
         LayoutType type = LayoutType.getType(rowID);
 
         switch (type) {
+            case LAYOUT_HEADER:
+                return LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_view_pager, parent, false);
             case LAYOUT_BANNER:
                 return LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_view_pager, parent, false);
             case LAYOUT_NONE://${Fall-Through}

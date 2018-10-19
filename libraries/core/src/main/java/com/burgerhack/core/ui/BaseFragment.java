@@ -28,13 +28,16 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         View subFragmentView = inflater.inflate(getFragmentLayoutId(), subFragmentViewContainer, false);
         subFragmentViewContainer.removeAllViews();
         subFragmentViewContainer.addView(subFragmentView);
+        return view;
+    }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 //        Button btnRetry = view.findViewById(R.id.btnRetry);
 //        btnRetry.setOnClickListener(this);
 //        Button btnSettings = view.findViewById(R.id.btnSettings);
 //        btnSettings.setOnClickListener(this);
-
-        return view;
     }
 
     protected abstract int getFragmentLayoutId();
@@ -49,43 +52,43 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         View rootView = getView();
         ProgressBar progressBar = rootView.findViewById(R.id.pbBaseFragmentProgress);
         View fragmentContentView = rootView.findViewById(getContainerViewGroupId());
-        View errorDisplayNetworkContainer = rootView.findViewById(R.id.containerErrorDisplay);
+        //View errorDisplayNetworkContainer = rootView.findViewById(R.id.containerErrorDisplay);
 
         switch (status) {
             case STATUS_LOADING:
                 progressBar.setVisibility(View.VISIBLE);
                 fragmentContentView.setVisibility(View.GONE);
-                errorDisplayNetworkContainer.setVisibility(View.GONE);
+                //errorDisplayNetworkContainer.setVisibility(View.GONE);
                 break;
 
             case STATUS_SUCCESS:
                 progressBar.setVisibility(View.GONE);
                 fragmentContentView.setVisibility(View.VISIBLE);
-                errorDisplayNetworkContainer.setVisibility(View.GONE);
+               // errorDisplayNetworkContainer.setVisibility(View.GONE);
                 break;
 
             case STATUS_ERROR:
                 progressBar.setVisibility(View.GONE);
                 fragmentContentView.setVisibility(View.GONE);
-                errorDisplayNetworkContainer.setVisibility(View.VISIBLE);
+               // errorDisplayNetworkContainer.setVisibility(View.VISIBLE);
                 break;
 
             case STATUS_NETWORK_ERROR:
                 progressBar.setVisibility(View.GONE);
                 fragmentContentView.setVisibility(View.GONE);
-                errorDisplayNetworkContainer.setVisibility(View.VISIBLE);
+                //errorDisplayNetworkContainer.setVisibility(View.VISIBLE);
                 break;
 
             case STATUS_EMPTY://Specialised case of Error in Watchlist/download cases where the content is Empty.
                 progressBar.setVisibility(View.GONE);
                 fragmentContentView.setVisibility(View.GONE);
-                errorDisplayNetworkContainer.setVisibility(View.GONE);
+                //errorDisplayNetworkContainer.setVisibility(View.GONE);
                 break;
         }
     }
 
     protected void showStatus(STATUS status, int stringResourceId) {
-        //showStatus(status, stringResourceId == 0 ? null : getString(stringResourceId));
+        showStatus(status, stringResourceId == 0 ? null : getString(stringResourceId));
     }
 
     protected void showStatus(STATUS status) {

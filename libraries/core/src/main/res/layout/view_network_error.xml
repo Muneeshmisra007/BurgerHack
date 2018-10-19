@@ -5,6 +5,7 @@
     android:layout_gravity="center"
     android:layout_margin="@dimen/globalDimenMid"
     android:gravity="center"
+    android:id="@+id/containerErrorDisplay"
     android:orientation="vertical"
     android:visibility="visible">
 
