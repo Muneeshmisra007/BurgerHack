@@ -51,6 +51,7 @@ public class FavoritesFragment extends BaseFragment implements AsyncListener<Lis
         mFavoriteAdapter = new RecommendedGridAdapter(new ArrayList(), listener);
         mRvFavorite.setAdapter(mFavoriteAdapter);
         mRvFavorite.setNestedScrollingEnabled(false);
+        showStatus(STATUS.STATUS_LOADING);
         BHRecommendedGenerator.getInstance().getFavoritesList(this);
     }
 
@@ -73,6 +74,7 @@ public class FavoritesFragment extends BaseFragment implements AsyncListener<Lis
 
     @Override
     public void onResponse(Exception exception, List<RecommendedItem> response) {
+        showStatus(STATUS.STATUS_SUCCESS);
         mFavoriteAdapter.updateAdapter(response);
     }
 
